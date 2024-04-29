@@ -46,6 +46,7 @@ function App() {
         {error && <ErrorHandling message={error} />}
         {weatherData && <Results weatherData={weatherData} />}
         <UnitSelector unit={unit} onUnitChange={handleUnitChange} />
+        <LocationInput/>
         <div id="forecast-container">
           {forecastData.map((day, index) => (
             <ForecastItem key={index} forecast={day} />
