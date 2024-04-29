@@ -73,15 +73,16 @@ function WeatherSearch() {
       <div className="card">
         <h1>Weather Search</h1>
         <LocationInput onSubmit={handleSubmitByCoordinates} />
-        <form onSubmit={handleSubmitByCity}>
-          <input
-            type="text"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            placeholder="Enter a city..."
-          />
-          <button type="submit">Search</button>
+        <form id="weather-search-form" onSubmit={handleSubmitByCity}>
+        <input
+        type="text"
+        value={city}
+        onChange={(e) => setCity(e.target.value)}
+        placeholder="Enter a city..."
+         />
+        <button type="submit">Search</button>
         </form>
+
         {loading && <p>Loading...</p>}
         {weatherData && (
           <Results weatherData={weatherData} forecastData={forecastData} />
