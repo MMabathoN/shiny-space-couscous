@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import Header from "./Header";
+import Footer from "./Footer";
 import WeatherSearch from "./WeatherSearch";
 import LocationInput from "./LocationInput";
 import ErrorHandling from "./ErrorHandling";
@@ -7,8 +8,6 @@ import LoadingIndicator from "./LoadingIndicator";
 import Results from "./Results";
 import ForecastItem from "./ForecastItem";
 import UnitSelector from "./UnitSelector";
-import Header from "./Header";
-import Footer from "./Footer";
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -20,10 +19,9 @@ function App() {
   const handleSearch = async (city) => {
     try {
       setLoading(true);
-      // Fetch weather data
+      // Placeholder: Implement fetchWeather and fetchForecast functions
       const response = await fetchWeather(city);
       setWeatherData(response);
-      // Fetch forecast data
       const forecast = await fetchForecast(city);
       setForecastData(forecast.slice(0, 5)); // Limit to 5 days
       setLoading(false);
@@ -36,7 +34,7 @@ function App() {
 
   const handleUnitChange = (selectedUnit) => {
     setUnit(selectedUnit);
-    // You can perform additional actions here if needed
+    // Placeholder: Additional actions if needed
   };
 
   return (
