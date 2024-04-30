@@ -8,6 +8,7 @@ import LoadingIndicator from "./LoadingIndicator";
 import Results from "./Results";
 import ForecastItem from "./ForecastItem";
 import UnitSelector from "./UnitSelector";
+import { Helmet } from 'react-helmet';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
