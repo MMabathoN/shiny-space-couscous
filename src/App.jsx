@@ -5,6 +5,7 @@ import WeatherSearch from "./WeatherSearch";
 import Result from "./Result";
 import ForecastItem from "./ForecastItem";
 import { HelmetProvider } from 'react-helmet-async';
+import UnitSelector from "./UnitSelector";
 
 
 function App() {
@@ -29,12 +30,6 @@ function App() {
       setLoading(false);
     }
   };
-
-  const handleUnitChange = (selectedUnit) => {
-    setUnit(selectedUnit);
-    // Placeholder: Additional actions if needed
-  };
-
   return (
     <div className="App">
       <Header />
@@ -50,6 +45,7 @@ function App() {
             <ForecastItem key={index} forecast={day} />
           ))}
         </div>
+        <UnitSelector/>
       </main>
       <Footer />
       <a href="https://www.github.com/MMabathoN/shiny-space-couscous/tree/codespace-shiny-space-couscous-5gvv774wqxjq2v4qv">GitHub Repo</a>
