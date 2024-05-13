@@ -2,13 +2,10 @@ import React, { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import WeatherSearch from "./WeatherSearch";
-import LocationInput from "./LocationInput";
-import ErrorHandling from "./ErrorHandling";
-import LoadingIndicator from "./LoadingIndicator";
-import Results from "./Results";
+import Result from "./Result";
 import ForecastItem from "./ForecastItem";
-import UnitSelector from "./UnitSelector";
-import { Helmet } from 'react-helmet';
+import { HelmetProvider } from 'react-helmet-async';
+
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -47,7 +44,7 @@ function App() {
         {error && <ErrorHandling message={error} />}
         {weatherData && <Results weatherData={weatherData} />}
         <UnitSelector unit={unit} onUnitChange={handleUnitChange} />
-        <LocationInput/>
+       
         <div id="forecast-container">
           {forecastData.map((day, index) => (
             <ForecastItem key={index} forecast={day} />

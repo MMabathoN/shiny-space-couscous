@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Helmet } from "react-helmet";
+import { HelmetProvider } from 'react-helmet-async';
 import axios from "axios";
 import { fetchWeather, fetchForecast, fetchWeatherByCoordinates } from "./api";
-import Results from "./Results";
-import LocationInput from "./LocationInput";
 import "./styles.css";
 
 function WeatherSearch() {
